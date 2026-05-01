@@ -1,5 +1,14 @@
 {
-  "devDependencies": {
-    "nodemon": "^3.1.14"
+  "name": "taskforge-ai",
+  "version": "1.0.0",
+  "description": "TaskForge AI — monorepo root",
+  "scripts": {
+    "start": "cd server && node server.js",
+    "install:server": "cd server && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
