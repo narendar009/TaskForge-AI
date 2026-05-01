@@ -1,14 +1,22 @@
 {
   "name": "taskforge-ai",
   "version": "1.0.0",
-  "description": "TaskForge AI — monorepo root",
-  "scripts": {
-    "start": "cd server && node server.js",
-    "install:server": "cd server && npm install",
-    "dev:server": "cd server && npm run dev",
-    "dev:client": "cd client && npm run dev"
-  },
+  "description": "TaskForge AI — Backend API",
+  "main": "server/server.js",
+  "type": "module",
   "engines": {
     "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "cd server && npm run dev"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.1"
   }
 }
