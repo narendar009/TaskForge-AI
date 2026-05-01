@@ -12,10 +12,12 @@ dotenv.config({ path: join(__dirname, '.env') });
 import app from './app.js';
 import connectDB from './config/db.js';
 
-const PORT = process.env.PORT || 5000;
+const PORT = parseInt(process.env.PORT, 10) || 5000;
+const HOST = '0.0.0.0'; // Bind to all interfaces — required for Railway/Docker
 
 connectDB();
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+// Explicitly bind to 0.0.0.0 so Railway's proxy can reach the container
+app.listen(PORT, HOST, () => {
+  console.log(`🚀 Server running on http://${HOST}:${PORT}`);
 });
